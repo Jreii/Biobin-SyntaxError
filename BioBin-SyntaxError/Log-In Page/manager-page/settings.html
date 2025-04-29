@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Account Settings - BioBin</title>
+  <link rel="stylesheet" href="setting.css" />
+  <link rel="stylesheet" href="home.css" />
+  <style>
+    .accordion-section {
+      border: 1px solid #000;
+      margin-bottom: 10px;
+    }
+    .accordion-title {
+      background: #f5f5f5;
+      padding: 10px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .accordion-content {
+      display: none;
+      padding: 10px;
+      background: #fff;
+      border-top: 1px solid #ccc;
+    }
+    .accordion-section.active .accordion-content {
+      display: block;
+    }
+    .accordion-title::after {
+      content: "▼";
+      float: right;
+    }
+    .accordion-section.active .accordion-title::after {
+      content: "▲";
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <div><img src="imgs/Logo.png" width="37" height="37" /> BioBin.org</div>
+      </div>
+      <div class="topbar-right">
+        <a href="#" class="about-link">About</a>
+        <div class="icons">
+          <span title="Messages">✉️</span>
+          <span title="Search">🔍</span>
+          <span title="Notifications">🔔</span>
+        </div>
+        <div class="menu-profile">
+          <span class="menu-icon" title="Menu">☰</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- PAGE NAME UNDER MENU ICON -->
+    <div class="page-name-label" id="pageLabel">ACCOUNT SETTINGS</div>
+
+    <!-- MAIN CONTENT -->
+    <main>
+      <h2>Account Settings</h2>
+
+      <div class="accordion-section">
+        <div class="accordion-title">Profile Information</div>
+        <div class="accordion-content">
+          <p>Username</p>
+          <p>Email Address</p>
+          <p>Upload/Change Profile Picture</p>
+        </div>
+      </div>
+
+      <div class="accordion-section">
+        <div class="accordion-title">General</div>
+        <div class="accordion-content">
+          <p>Language, Theme, or Regional Settings</p>
+        </div>
+      </div>
+
+      <div class="accordion-section active">
+        <div class="accordion-title">Security Settings</div>
+        <div class="accordion-content">
+          <p>Change Password</p>
+          <p>2 Factor Authentication</p>
+          <p>Manage Connected Devices & Login Activity</p>
+        </div>
+      </div>
+
+      <div class="accordion-section">
+        <div class="accordion-title">Privacy Settings</div>
+        <div class="accordion-content">
+          <p>Data Sharing, Visibility, and Account Access Settings</p>
+        </div>
+      </div>
+
+      <div class="accordion-section">
+        <div class="accordion-title">Notification Preferences</div>
+        <div class="accordion-content">
+          <p>Email, SMS, Push Notification Controls</p>
+        </div>
+      </div>
+
+      <div class="accordion-section">
+        <div class="accordion-title">Linked Accounts</div>
+        <div class="accordion-content">
+          <p>Social Media and External Service Integrations</p>
+        </div>
+      </div>
+
+      <div class="accordion-section">
+        <div class="accordion-title">Subscription & Billing</div>
+        <div class="accordion-content">
+          <p>Payment Methods, Invoices, and Plan Details</p>
+        </div>
+      </div>
+
+      <div class="accordion-section">
+        <div class="accordion-title">Help & Support</div>
+        <div class="accordion-content">
+          <p>FAQs, Contact Support, Community Help</p>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="#">Ask for help</a>
+        <a href="#">About Us</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Contact Us</a>
+      </div>
+      <div class="social-icons">
+        <span>📺 ▶️ 🐦 📧</span>
+      </div>
+      <p>© 2026 BioBin BB | Made by syntaxError.</p>
+    </footer>
+  </div>
+
+  <!-- SIDE MENU -->
+  <div id="sideMenu" class="side-menu hidden">
+    <h3>MENU</h3>
+    <ul>
+      <li><a href="profile.html" class="menu-link" id="profile-link"><span>👤</span> User Profile</a></li>
+      <li><a href="home.html" class="menu-link" id="home-link"><span>🏠</span> Home</a></li>
+      <li><a href="stats.html" class="menu-link" id="stats-link"><span>📊</span> Machine Statistics</a></li>
+      <li><a href="inbox.html" class="menu-link" id="inbox-link"><span>✉️</span> Inbox</a></li>
+      <li><a href="settings.html" class="menu-link" id="settings-link"><span>⚙️</span> Account Settings</a></li>
+      <li><a href="logout.html" class="menu-link" id="logout-link"><span>⍈</span> Logout</a></li>
+    </ul>
+  </div>
+
+  <!-- JS -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const menuIcon = document.querySelector(".menu-icon");
+      const sideMenu = document.getElementById("sideMenu");
+
+      menuIcon.addEventListener("click", () => {
+        sideMenu.classList.toggle("show");
+        sideMenu.classList.toggle("hidden");
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!sideMenu.contains(e.target) && !menuIcon.contains(e.target)) {
+          sideMenu.classList.remove("show");
+          sideMenu.classList.add("hidden");
+        }
+      });
+
+      const pageMap = {
+        "profile.html": "USER PROFILE",
+        "home.html": "HOME",
+        "stats.html": "MACHINE STATS",
+        "inbox.html": "INBOX",
+        "settings.html": "ACCOUNT SETTINGS",
+        "logout.html": "LOGOUT"
+      };
+
+      const currentPage = "settings.html";
+      const menuLinks = document.querySelectorAll(".menu-link");
+
+      menuLinks.forEach(link => link.classList.remove("active"));
+      const activeLink = document.getElementById(currentPage.replace(".html", "") + "-link");
+      if (activeLink) {
+        activeLink.classList.add("active");
+        pageLabel.textContent = pageMap[currentPage] || "ACCOUNT SETTINGS";
+      }
+
+      // Accordion toggle
+      document.querySelectorAll(".accordion-title").forEach(title => {
+        title.addEventListener("click", () => {
+          const section = title.parentElement;
+          section.classList.toggle("active");
+        });
+      });
+    });
+  </script>
+</body>
+</html>

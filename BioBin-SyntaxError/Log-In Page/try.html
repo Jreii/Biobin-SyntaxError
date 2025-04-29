@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>try</title>
+        <style>
+           .contents {
+                padding-left: 30px;
+                padding-top: 30px;
+                column-count: 3; /* 3 columns */
+                column-gap: 20px;
+            }
+
+            .box {
+                background-color: white;
+                border-radius: 20px;
+                padding: 15px;
+                margin-bottom: 20px;
+                display: inline-block;
+                width: 100%;
+                max-width: 100%; /* ✨ prevent overflow */
+                box-sizing: border-box; /* ✨ include padding inside width */
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2),
+                            0 6px 20px rgba(0, 0, 0, 0.19);
+                transition: transform 0.3s ease;
+                }
+
+        </style>
+    </head>
+    <body>
+        <div class="contents">
+            <div class="box">Short box</div>
+            <div class="box">This is a medium height box with more text.</div>
+            <div class="box">Tall box with a lot more text to show how it expands vertically and wraps nicely!</div>
+            <div class="box">Another short box.</div>
+            <div class="box">Medium box again. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+          </div>
+          
+    </body>
+</html>

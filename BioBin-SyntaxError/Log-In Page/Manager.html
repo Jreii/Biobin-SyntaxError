@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manager</title>
+  <link rel="icon" type="image/x-icon" href="Biobin Logo.png">
+  <style>
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #cfffcf;
+      padding: 10px 20px;
+      border-bottom: 1px solid #ddd;
+    }
+  
+    .topbar-left div {
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color:#555
+    }
+  
+    .topbar-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    a{
+      color: black;
+      text-decoration: none;
+    }
+    .back-button {
+      font-size: 20px; 
+      position: absolute;
+      left: 20px;
+      top: 100px;
+      background-color: #fff;
+      border: 2px solid black;
+      border-radius: 10px;
+      padding: 15px 30px;
+      cursor: pointer;
+    }
+
+    .back-button:hover {
+      background-color: black;
+      color: white;
+    }
+    h1 {
+      margin-top: -80px;
+      font-size: 2em;
+      margin-bottom: 30px;
+    }
+    h3 {
+      margin-bottom: 15px;
+      color: #555;
+      font-size: 1.2em; 
+    }
+    .manager{
+      font-size: x-large;
+      font-weight: bold;
+    }
+    .submit {
+      width: 100px;
+      height: 50px;
+      font-size: 18px;
+      font: bold;
+      background-color: #fff;
+      border: 2px solid black;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: -20px;
+      margin-bottom: -30px;
+      transition: background-color 0.3s, color 0.3s;
+    
+    }
+    .submit:hover:enabled{
+      background-color: black;
+      color: white;
+    }
+    .submit:disabled {
+      background-color: #ddd;
+      color: #888;
+      border: 2px solid #aaa;
+      cursor: not-allowed;
+    }
+    .main-content {
+      margin-top: 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: arial, sans-serif;
+      font-size: 18px;
+      padding: 100px;
+    }
+    .input {
+      width: 300px;
+      height: 40px;
+      font-size: 16px;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+    label{
+        font-weight: bold;
+    }
+    body{
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f4f4f4;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      font-size: 18px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: -25px;
+    }
+    .btn{
+      width:100px;
+      height: 50px;
+      font-size: 18px;
+    }
+</style>
+<header class="topbar">
+  <div class="topbar-left">
+    <div><img src="images/Logo.png" width="37" height="37" /> BioBin.org</div>
+  </div>
+  <div class="topbar-right">
+    <a href="#" class="about-link">About</a>
+</header>
+</head>
+<body>
+<a href="login.html">
+  <button class="back-button">Back</button>
+</a>
+
+<div class="main-content">
+  <h1>Login for BioBin</h1>
+  <h3>Login as</h3>
+      <p class="manager">Manager</p>
+</br>
+      <!--Sa form action mo ilagay yung name ng file para madirect dun pag pinindot yung submit-->
+      <!--Baka malito ka, ang gulo pa naman yung code ko-->
+      
+        <label for="IdNumber">Enter your ID Number:</label>
+        <input type="IdNumber" class="input" id="IdNumber" name="IdNumber" value="EM2025_01" required/><br/>
+      <a href="manager_page.html">
+        <button class="submit" id="submitBtn" type="submit">Submit</button>
+      </a>
+        
+      <script>
+        const IdNumberInput = document.getElementById("IdNumber");
+        const submitBtn = document.getElementById("submitBtn");
+      
+        IdNumberInput.addEventListener("input", () => {
+          if (IdNumberInput.checkValidity()) {
+            submitBtn.disabled = false;
+          } else {
+            submitBtn.disabled = true;
+          }
+        });
+      </script>
+            
+</div>
+</body>
+</html>

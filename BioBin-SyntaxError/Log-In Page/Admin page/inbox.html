@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BioBin Dashboard - Inbox</title>
+  <link rel="stylesheet" href="inbox.css" />
+</head>
+<body>
+  <div class="container">
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <div><img src="imgs/Logo.png" width="37" height="37" /> BioBin.org</div>
+      </div>
+      <div class="topbar-right">
+        <a href="#" class="about-link">About</a>
+        <div class="icons">
+          <span title="Messages">✉️</span>
+          <span title="Search">🔍</span>
+          <span title="Notifications">🔔</span>
+        </div>
+        <div class="menu-profile">
+          <span class="menu-icon" title="Menu">☰</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- PAGE NAME -->
+    <div class="page-name-label" id="pageLabel">INBOX</div>
+
+    <!-- MAIN SECTION -->
+    <main class="inbox-container">
+      <aside class="inbox-menu">
+        <ul>
+          <li><a href="#" class="mail-tab active" data-tab="inbox">📥 Inbox</a></li>
+          <li><a href="#" class="mail-tab" data-tab="starred">⭐ Starred</a></li>
+          <li><a href="#" class="mail-tab" data-tab="sent">📤 Sent</a></li>
+          <li><a href="#" class="mail-tab" data-tab="reminders">⏰ Reminders</a></li>
+          <li><a href="#" class="mail-tab" data-tab="support">🛠 Customer Support</a></li>
+          <li><a href="#" class="mail-tab" data-tab="trash">🗑 Trash</a></li>
+        </ul>
+      </aside>
+
+      <section class="inbox-content">
+        <div id="inbox" class="message-tab active">
+          <p>📨 BioBin: Thank you for joining us! Here’s a voucher for your first bin pickup.</p>
+          <p>📨 BioBin: Don’t forget to check your waste stats!</p>
+        </div>
+        <div id="starred" class="message-tab">
+          <p>⭐ BioBin: Thank you for joining us! Here’s a voucher for your first bin pickup.</p>
+        </div>
+        <div id="sent" class="message-tab">
+          <p>📤 You sent a request to customer support.</p>
+        </div>
+        <div id="reminders" class="message-tab">
+          <p>⏰ Reminder: Schedule your next bin pickup!</p>
+        </div>
+        <div id="support" class="message-tab">
+          <p>🛠 Customer Support: We’ve received your request and will get back shortly.</p>
+        </div>
+        <div id="trash" class="message-tab">
+          <p>🗑 Deleted: Old message about bin status.</p>
+        </div>
+      </section>
+      <button class="add-message-btn" onclick="openNewMessageModal()">+</button>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="#">Ask for help</a>
+        <a href="#">About Us</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Contact Us</a>
+      </div>
+      <div class="social-icons">
+        <span>📺 ▶️ 🐦 📧</span>
+      </div>
+      <p>© 2026 BioBin BB | Made by syntaxError.</p>
+    </footer>
+  </div>
+
+  <!-- SIDE MENU -->
+  <div id="sideMenu" class="side-menu hidden">
+    <h3>MENU</h3>
+    <ul>
+      <li><a href="profile.html" class="menu-link" id="profile-link"><span>👤</span> User Profile</a></li>
+      <li><a href="home.html" class="menu-link" id="home-link"><span>🏠</span> Home</a></li>
+      <li><a href="stats.html" class="menu-link" id="stats-link"><span>📊</span> Machine Statistics</a></li>
+      <li><a href="inbox.html" class="menu-link" id="inbox-link"><span>✉️</span> Inbox</a></li>
+      <li><a href="settings.html" class="menu-link" id="settings-link"><span>⚙️</span> Account Settings</a></li>
+      <li><a href="logout.html" class="menu-link" id="logout-link"><span>⍈</span> Logout</a></li>
+    </ul>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Slide-in menu
+      const menuIcon = document.querySelector(".menu-icon");
+      const sideMenu = document.getElementById("sideMenu");
+
+      menuIcon.addEventListener("click", () => {
+        sideMenu.classList.toggle("show");
+        sideMenu.classList.toggle("hidden");
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!sideMenu.contains(e.target) && !menuIcon.contains(e.target)) {
+          sideMenu.classList.remove("show");
+          sideMenu.classList.add("hidden");
+        }
+      });
+
+      // Set active label
+      const pageMap = {
+        "profile.html": "USER PROFILE",
+        "home.html": "HOME",
+        "stats.html": "MACHINE STATS",
+        "inbox.html": "INBOX",
+        "settings.html": "ACCOUNT SETTINGS",
+        "logout.html": "LOGOUT"
+      };
+
+      const currentPage = window.location.pathname.split("/").pop();
+      const pageLabel = document.getElementById("pageLabel");
+      pageLabel.textContent = pageMap[currentPage] || "DASHBOARD";
+
+      const menuLinks = document.querySelectorAll(".menu-link");
+      menuLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.href.includes(currentPage)) {
+          link.classList.add("active");
+        }
+      });
+
+      // Mail tab switching
+      const tabs = document.querySelectorAll(".mail-tab");
+      const contents = document.querySelectorAll(".message-tab");
+
+      tabs.forEach(tab => {
+        tab.addEventListener("click", (e) => {
+          e.preventDefault();
+          tabs.forEach(t => t.classList.remove("active"));
+          contents.forEach(c => c.classList.remove("active"));
+
+          tab.classList.add("active");
+          const target = document.getElementById(tab.dataset.tab);
+          if (target) target.classList.add("active");
+        });
+      });
+    });
+    
+    function openNewMessageModal() {
+  // Example: Open a modal or trigger a new message form
+  alert("New message modal opened!");
+}
+
+  </script>
+</body>
+</html>

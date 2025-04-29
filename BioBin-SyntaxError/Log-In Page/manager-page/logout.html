@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BioBin Dashboard - Logout</title>
+  <link rel="stylesheet" href="logout.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- LOGOUT SECTION -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <div><img src="imgs/Logo.png" width="37" height="37" /> BioBin.org</div>
+      </div>
+      <div class="topbar-right">
+        <a href="home.html" class="about-link">Home</a>
+      </div>
+    </header>
+
+    <div class="logout-container">
+      <!-- Initial Logout Prompt -->
+      <h2>Do you want to log out?</h2>
+      <div class="logout-buttons">
+        <button class="logout-btn" id="yes-btn">Yes</button>
+        <button class="logout-btn" id="no-btn">No</button>
+      </div>
+      
+      <!-- Confirmation Prompt (hidden initially) -->
+      <div id="confirm-logout" class="hidden">
+        <h2>Are you sure you want to log out?</h2>
+        <div class="logout-buttons">
+          <button class="logout-btn" id="confirm-yes-btn">Yes, log out</button>
+          <button class="logout-btn" id="confirm-no-btn">Cancel</button>
+        </div>
+      </div>
+
+      <!-- Logout Successful (hidden initially) -->
+      <div id="logout-success" class="hidden">
+        <h2>You have been logged out successfully.</h2>
+        <p>Thank you for using BioBin. We hope to see you again soon.</p>
+        <a href="home.html" class="logout-link">Go to Homepage</a>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="#">Ask for help</a>
+        <a href="#">About Us</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Contact Us</a>
+      </div>
+      <div class="social-icons">
+        <span>📺 ▶️ 🐦 📧</span>
+      </div>
+      <p>© 2026 BioBin BB | Made by syntaxError.</p>
+    </footer>
+  </div>
+
+  <!-- LOGOUT SCRIPT -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Hide the confirmation and success sections initially
+      const confirmLogout = document.getElementById("confirm-logout");
+      const logoutSuccess = document.getElementById("logout-success");
+
+      // Buttons
+      const yesBtn = document.getElementById("yes-btn");
+      const noBtn = document.getElementById("no-btn");
+      const confirmYesBtn = document.getElementById("confirm-yes-btn");
+      const confirmNoBtn = document.getElementById("confirm-no-btn");
+
+      // Hide initial prompt and show confirmation when "Yes" is clicked
+      yesBtn.addEventListener("click", () => {
+        confirmLogout.classList.remove("hidden");
+        document.querySelector(".logout-container h2").textContent = "Are you sure you want to log out?";
+        document.querySelector(".logout-buttons").style.display = "none";  // Hide buttons after confirmation
+      });
+
+      // Hide confirmation and return to initial prompt when "No" is clicked
+      noBtn.addEventListener("click", () => {
+        window.location.href = "home.html"; // Go back to home page
+      });
+
+      // Log the user out and show success message when "Yes, log out" is clicked
+      confirmYesBtn.addEventListener("click", () => {
+        // Here you can add actual logout logic like clearing cookies or session storage
+        logoutSuccess.classList.remove("hidden");
+        confirmLogout.classList.add("hidden");
+      });
+
+      // Go back to initial prompt when "Cancel" is clicked
+      confirmNoBtn.addEventListener("click", () => {
+        confirmLogout.classList.add("hidden");
+        document.querySelector(".logout-container h2").textContent = "Do you want to log out?";
+        document.querySelector(".logout-buttons").style.display = "flex";  // Show buttons again
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BioBin-Admin Dashboard</title>
+  <link rel="icon" type="image/x-icon" href="Biobin Logo.png">
+  <link rel="stylesheet" href="Adminpage.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <div><img src="Biobin Logo.png" width="37" height="37" /> BioBin.org <h2>Welcome, Admin!</h2></div>
+      </div>
+      <div class="topbar-right">
+        <div class="icons">
+          <span class="search">
+            <input id="searchInput" type="text" placeholder="Search">
+            <button type="submit"></button> <!--Download a search pic here-->
+          </span>  
+          <span title="Search">🔍</span>
+          <span title="Messages">✉️</span>
+          <!--<span class="notification" title="Notifications"><a class="icon" id="notificationBtn">🔔</a></span>-->
+          <span class="notification" title="Notifications"><span class="icon" id="notificationBtn">🔔</span></span>
+
+        </div>
+        <!-- Menu icon open access-->
+        <div class="menu-profile">
+            <span class="menu-icon" title="Menu">☰</span>
+          </div>
+      </div>
+    </header>
+
+    <!-- PAGE NAME UNDER MENU ICON -->
+    <div class="page-name-label" id="pageLabel">Dashboard</div>
+
+    <!--Side-menu/dashboard menu-->
+    <div class="dashboard-menu">
+        <ul class="dashboard-list">
+            <li><span>Dashboard</span></li>
+            <li><span>Manage Users</span></li>
+            <li><span>System & Product Errors</span></li>
+            <li><span>Account Requests</span></li>
+            <li><span>Backup & Restore</span></li>
+            <li><span>Settings</span></li>
+            <li><span>Help</span></li>
+        </ul>
+    </div>
+
+   <!--Main content-->
+    <div class="container-menu">
+     <main class="content">
+        <h2 class="heading">Dashboard</h2>
+        <div class="cards">
+                <div class="card" style="flex-grow: 1">
+                    <div class="box">
+                        <h4>Team</h4>
+                        <div class="admin-box">
+                            <div class="icon-case-admin">
+                                <img src="images/user.png" alt="admin icon">
+                            </div>
+                            <div class="text-admin">
+                                <h5>System Administrator</h5> 
+                            </div>
+                        </div>
+                        <div class="manager-box">
+                            <div class="icon-case-manager">
+                                <img src="images/user.png" alt="manager icon">
+                            </div>
+                            <div class="text-manager">
+                                <h5>E-commerce Manager</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-2" style="flex-grow: 1">
+                    <div class="box">
+                        <h4>Total active users</h4>
+                        <h1 style="color: #68BA7F">265</h1>
+                    </div>
+                </div>
+                <div class="card-2" style="flex-grow: 1">
+                    <div class="box">
+                        <h4>Number of pending user</h4>
+                        <h1 style="color: #68BA7F">100</h1>
+                    </div>
+                </div>
+                <div class="card" style="flex-grow: 4">
+                    <div class="box">
+                        <h4>Latest Alerts:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">see more</span></h4>
+                        <img src="images/content latest alerts.png" height="100px" width="300px">
+                    </div>
+                </div>
+            </div>
+
+        <div class="content-2">    <!--align titles in boxes, make a css for this-->
+            <div class="summary">
+                <h3>Summary Report</h3>
+                <div class="system">
+                    <div class="title">
+                        <h4>System Errors</h4>
+                    <div class="servers">
+                        <h6>Server Uptime:</h6>
+                        <h6 id="serer">Server Errors:</h6>
+                    </div>
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="title">
+                        <h4>Product Errors</h4>
+                    <div class="sensors">
+                        <h6>Load Sensor Errors:</h6>
+                        <h6 id="sener">NPK Sensor Errors:</h6>
+                    </div>
+                    </div>
+                </div>
+                <div class="useract">
+                    <div class="title">
+                        <h4>User Activities</h4>
+                    <div class="activities">
+                        <img src="images/diagram.avif" height="190px" width="500px"> <!--Input image for user activities-->
+                    </div>
+                    </div>
+                </div>
+            </div>
+     </main>
+    </div>
+        
+    <!-- NOTIF BOX -->
+  <div id="notificationBox" class="notification-box">
+    <div id="notificationHeader" class="notification-header">
+      Notifications
+    </div>
+    <ul id="notificationList" class="notification-list">
+      <li><a href="#order" class="notif-cont">You have received a new order from Denise. Check it out now!</a></li>
+      <li><a href="#email" class="notif-cont">You received a new e-mail from ****@gmail.com</a></li>
+      <li><a href="#email" class="notif-cont">You have a new message from Jarmaine regarding your product.</a></li>
+      <li><a href="#order" class="notif-cont">Order #98765 was canceled by the customer.</a></li>
+      <li><a href="#update" class="notif-cont">Order #34567 has been shipped!</a></li>
+      <li><a href="#update" class="notif-cont">New review for BioBin-x: 5 stars. Click to view.</a></li>
+      <li><a href="#update" class="notif-cont">Your stock of Compost Bin is running low. Restock soon to avoid selling out!</a></li>
+    </ul>
+</div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="#">Ask for help</a>
+        <a href="#">About Us</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Contact Us</a>
+      </div>
+      <div class="social-icons">
+        <span>📺 ▶️ 🐦 📧</span>
+      </div>
+      <p>© 2026 BioBin BB | Made by syntaxError.</p>
+    </footer>
+  </div>
+
+  <!-- SIDE MENU -->
+  <div id="sideMenu" class="side-menu hidden">
+    <h3>MENU</h3>
+    <ul>
+      <li><a href="#" class="menu-link" id="profile-link"><span>👤</span> Admin Profile</a></li>
+      <li><a href="#" class="menu-link" id="home-link"><span>🏠</span> Home</a></li>
+      <li><a href="#" class="menu-link" id="inbox-link"><span>✉️</span> Inbox</a></li>
+      <li><a href="#" class="menu-link" id="settings-link"><span>⚙️</span> Account Settings</a></li>
+      <li><a href="logout.html" class="menu-link" id="logout-link"><span>⍈</span> Logout</a></li>
+      <li><a href="#" class="about-link">About</a></li>
+    </ul>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+  const menuIcon = document.querySelector(".menu-icon");
+  const sideMenu = document.getElementById("sideMenu");
+
+  // Toggle menu visibility
+  menuIcon.addEventListener("click", () => {
+    sideMenu.classList.toggle("show");
+    sideMenu.classList.toggle("hidden");
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!sideMenu.contains(e.target) && !menuIcon.contains(e.target)) {
+      sideMenu.classList.remove("show");
+      sideMenu.classList.add("hidden");
+    }
+  });
+});
+
+
+      // Highlight active link & update page name label
+      const pageMap = {
+        "profile.html": "ADMIN PROFILE",
+        "home.html": "HOME",
+        "inbox.html": "INBOX",
+        "settings.html": "ACCOUNT SETTINGS",
+        "logout.html": "LOGOUT"
+      };
+
+
+      // Update active state on click
+      menuLinks.forEach(link => {
+        link.addEventListener("click", function () {
+          menuLinks.forEach(item => item.classList.remove("active"));
+          this.classList.add("active");
+        });
+      });
+      
+      
+
+  </script>
+</body>
+</html>

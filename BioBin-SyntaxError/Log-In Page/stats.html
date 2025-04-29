@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Machine Status</title>
+  <link rel="icon" type="image/x-icon" href="Biobin Logo.png">
+  <link rel="stylesheet" href="stats.css" />
+</head>
+<body>
+  <div class="container">
+    
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <div><img src="images/Logo.png" width="37" height="37" /> BioBin.org</div>
+      </div>
+      <div class="topbar-right">
+        <a href="#" class="about-link">About</a>
+        <div class="icons">
+          <span title="Messages">✉️</span>
+          <span title="Search">🔍</span>
+          <span title="Notifications">🔔</span>
+        </div>
+        <div class="menu-profile">
+          <span class="menu-icon" title="Menu">☰</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- PAGE NAME -->
+    <div class="page-name-label" id="pageLabel">MACHINE STATUS</div>
+
+    <!-- MAIN CONTENT -->
+    <main>
+    <div class="container-menu">
+      <h2>All Machine Statuses</h2>
+
+      <div class="machine-statistics">
+        <div class="stat-section">
+          <button class="stat-toggle" data-target="alpha">▸ MACHINE ALPHA</button>
+          <div id="alpha" class="stat-content">
+            <table>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>LOAD PERCENTAGE</th>
+                  <th>TARGET PERCENTAGE</th>
+                  <th>STATUS</th>
+                  <th>RECOMMENDED ACTION</th>
+                  <th>pH LEVEL</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>NITROGEN</td>
+                  <td>27%</td>
+                  <td>80%</td>
+                  <td>Low</td>
+                  <td>Refill</td>
+                  <td style="color: green;">6.5</td>
+                </tr>
+                <tr>
+                  <td>POTASSIUM</td>
+                  <td>79%</td>
+                  <td>80%</td>
+                  <td>Optimal</td>
+                  <td>Standby</td>
+                  <td style="color: blue;">7.0</td>
+                </tr>
+                <tr>
+                  <td>PHOSPHOROUS</td>
+                  <td>65%</td>
+                  <td>80%</td>
+                  <td>Optimal</td>
+                  <td>Standby</td>
+                  <td style="color: red;">7.4</td>
+                </tr>
+                <tr>
+                  <td>MACHINE LOAD</td>
+                  <td>98%</td>
+                  <td>90%</td>
+                  <td>High</td>
+                  <td>Harvest</td>
+                  <td>—</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      
+        <div class="stat-section">
+          <button class="stat-toggle" data-target="beta">▸ MACHINE BETA</button>
+          <div id="beta" class="stat-content">
+            <table>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>LOAD PERCENTAGE</th>
+                  <th>TARGET PERCENTAGE</th>
+                  <th>STATUS</th>
+                  <th>RECOMMENDED ACTION</th>
+                  <th>pH LEVEL</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>NITROGEN</td>
+                  <td>27%</td>
+                  <td>80%</td>
+                  <td>Low</td>
+                  <td>Refill</td>
+                  <td style="color: green;">6.5</td>
+                </tr>
+                <tr>
+                  <td>POTASSIUM</td>
+                  <td>79%</td>
+                  <td>80%</td>
+                  <td>Optimal</td>
+                  <td>Standby</td>
+                  <td style="color: blue;">7.0</td>
+                </tr>
+                <tr>
+                  <td>PHOSPHOROUS</td>
+                  <td>65%</td>
+                  <td>80%</td>
+                  <td>Optimal</td>
+                  <td>Standby</td>
+                  <td style="color: red;">7.4</td>
+                </tr>
+                <tr>
+                  <td>MACHINE LOAD</td>
+                  <td>98%</td>
+                  <td>90%</td>
+                  <td>High</td>
+                  <td>Harvest</td>
+                  <td>—</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      
+        <div class="stat-section">
+          <button class="stat-toggle" data-target="omega">▸ MACHINE OMEGA</button>
+          <div id="omega" class="stat-content">
+            <table>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>LOAD PERCENTAGE</th>
+                  <th>TARGET PERCENTAGE</th>
+                  <th>STATUS</th>
+                  <th>RECOMMENDED ACTION</th>
+                  <th>pH LEVEL</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>NITROGEN</td>
+                  <td>27%</td>
+                  <td>80%</td>
+                  <td>Low</td>
+                  <td>Refill</td>
+                  <td style="color: green;">6.5</td>
+                </tr>
+                <tr>
+                  <td>POTASSIUM</td>
+                  <td>79%</td>
+                  <td>80%</td>
+                  <td>Optimal</td>
+                  <td>Standby</td>
+                  <td style="color: blue;">7.0</td>
+                </tr>
+                <tr>
+                  <td>PHOSPHOROUS</td>
+                  <td>65%</td>
+                  <td>80%</td>
+                  <td>Optimal</td>
+                  <td>Standby</td>
+                  <td style="color: red;">7.4</td>
+                </tr>
+                <tr>
+                  <td>MACHINE LOAD</td>
+                  <td>98%</td>
+                  <td>90%</td>
+                  <td>High</td>
+                  <td>Harvest</td>
+                  <td>—</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="#">Ask for help</a>
+        <a href="#">About Us</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Contact Us</a>
+      </div>
+      <div class="social-icons">
+        <span>📺 ▶️ 🐦 📧</span>
+      </div>
+      <p>© 2026 BioBin BB | Made by syntaxError.</p>
+    </footer>
+
+    <!-- SIDE MENU -->
+    <div id="sideMenu" class="side-menu hidden">
+      <h3>MENU</h3>
+      <ul>
+        <li><a href="profile.html" class="menu-link" id="profile-link"><span>👤</span> User Profile</a></li>
+        <li><a href="home.html" class="menu-link" id="home-link"><span>🏠</span> Home</a></li>
+        <li><a href="stats.html" class="menu-link" id="stats-link"><span>📊</span> Machine Statistics</a></li>
+        <li><a href="inbox.html" class="menu-link" id="inbox-link"><span>✉️</span> Inbox</a></li>
+        <li><a href="settings.html" class="menu-link" id="settings-link"><span>⚙️</span> Account Settings</a></li>
+        <li><a href="logout.html" class="menu-link" id="logout-link"><span>⍈</span> Logout</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- SCRIPTS -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+  const menuIcon = document.querySelector(".menu-icon");
+  const sideMenu = document.getElementById("sideMenu");
+
+  // Toggle side menu
+  menuIcon.addEventListener("click", () => {
+    sideMenu.classList.toggle("show");
+    sideMenu.classList.toggle("hidden");
+  });
+
+  // Close menu if clicking outside
+  document.addEventListener("click", (e) => {
+    if (!sideMenu.contains(e.target) && !menuIcon.contains(e.target)) {
+      sideMenu.classList.remove("show");
+      sideMenu.classList.add("hidden");
+    }
+  });
+
+  // Highlight active menu and set page label
+  const pageMap = {
+    "profile.html": "USER PROFILE",
+    "home.html": "HOME",
+    "stats.html": "MACHINE STATS",
+    "inbox.html": "INBOX",
+    "settings.html": "ACCOUNT SETTINGS",
+    "logout.html": "LOGOUT"
+  };
+
+  const currentPage = window.location.pathname.split("/").pop();
+  const pageLabel = document.getElementById("pageLabel");
+  const menuLinks = document.querySelectorAll(".menu-link");
+
+  menuLinks.forEach(link => link.classList.remove("active"));
+  const activeLink = document.getElementById(currentPage.replace(".html", "") + "-link");
+
+  if (activeLink) {
+    activeLink.classList.add("active");
+    pageLabel.textContent = pageMap[currentPage] || "MACHINE STATS";
+  }
+
+  // Allow user to click and update highlight manually
+  menuLinks.forEach(link => {
+    link.addEventListener("click", function () {
+      menuLinks.forEach(item => item.classList.remove("active"));
+      this.classList.add("active");
+    });
+  });
+});
+
+  // Expand/shrink machine stat sections
+  document.querySelectorAll('.stat-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+      const targetId = button.getAttribute('data-target');
+      const content = document.getElementById(targetId);
+
+      if (!content) return;
+
+      const isVisible = content.style.display === 'block';
+
+      if (isVisible) {
+        // Close this section
+        content.style.display = 'none';
+        button.classList.remove('active');
+        button.textContent = button.textContent.replace('▾', '▸');
+      } else {
+        // Open this section
+        content.style.display = 'block';
+        button.classList.add('active');
+        button.textContent = button.textContent.replace('▸', '▾');
+      }
+    });
+  });
+</script>
+
+<!--error
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Allow clicking the ⋮ button to rename machine names
+    document.querySelectorAll('.options-button').forEach(button => {
+      button.addEventListener('click', function (e) {
+        e.stopPropagation(); // Prevent triggering parent toggle
+
+        const header = button.closest('.stat-header');
+        const titleSpan = header.querySelector('.stat-title');
+        const currentName = titleSpan.textContent.trim();
+
+        // Avoid multiple inputs
+        if (header.querySelector('.rename-input')) return;
+
+        const inputBox = document.createElement('div');
+        inputBox.className = 'rename-input';
+        inputBox.innerHTML = `
+          <input type="text" value="${currentName}" />
+          <button>Save</button>
+        `;
+
+        header.appendChild(inputBox);
+        inputBox.style.display = 'block';
+
+        const input = inputBox.querySelector('input');
+        const saveBtn = inputBox.querySelector('button');
+
+        saveBtn.addEventListener('click', () => {
+          const newName = input.value.trim();
+          if (newName !== '') {
+            titleSpan.textContent = newName;
+          }
+          inputBox.remove();
+        });
+      });
+    });
+  });
+</script>
+
+
+  </script>
+  </body>
+</html>
